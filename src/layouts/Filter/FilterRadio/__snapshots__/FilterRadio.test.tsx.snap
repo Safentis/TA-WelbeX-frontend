@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterRadio /> component does match to the snapshot 1`] = `
+<ul
+  className="custom-style"
+>
+  <li
+    className="filter-signal__item"
+    key="0"
+  >
+    <label
+      htmlFor="name"
+    >
+      name
+      <input
+        checked={true}
+        id="name"
+        onChange={[Function]}
+        type="radio"
+        value="name"
+      />
+    </label>
+  </li>
+  <li
+    className="filter-signal__item"
+    key="1"
+  >
+    <label
+      htmlFor="number"
+    >
+      number
+      <input
+        checked={false}
+        id="number"
+        onChange={[Function]}
+        type="radio"
+        value="number"
+      />
+    </label>
+  </li>
+  <li
+    className="filter-signal__item"
+    key="2"
+  >
+    <label
+      htmlFor="distance"
+    >
+      distance
+      <input
+        checked={false}
+        id="distance"
+        onChange={[Function]}
+        type="radio"
+        value="distance"
+      />
+    </label>
+  </li>
+</ul>
+`;

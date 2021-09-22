@@ -29,8 +29,8 @@ describe('<App />', () => {
       expect(component.find('table')).toBeTruthy();
     });
     
-    it('has 1 Sort element', () => {
-      expect(component.find('Sort')).toBeTruthy();
+    it('has 1 Filter element', () => {
+      expect(component.find('Filter')).toBeTruthy();
     });
 
     it('has 1 THead element', () => {

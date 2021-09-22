@@ -5,7 +5,12 @@
     border-radius: .5rem;
     color: var(--main-white-color);
     cursor: pointer;
+    display: flex;
+    align-content: center;
+    justify-content: center;
     padding: .5rem .75rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
     outline: none;
     transition: .3s;
 }

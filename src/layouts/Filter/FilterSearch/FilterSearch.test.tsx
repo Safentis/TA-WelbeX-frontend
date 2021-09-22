@@ -1,23 +1,28 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 
-import SortColumn from './SortColumn';
+import FilterSearch from './FilterSearch';
 
-import { Props } from './SortColumn.interface';
+import { Props } from './FilterSearch.interface';
 
 const setUp = (props: Props) => {
-  return shallow(<SortColumn {...props} />);
+  return shallow(<FilterSearch {...props} />);
 };
 
-describe('<SortColumn />', () => {
+describe('<FilterSearch />', () => {
   let component: ShallowWrapper<
     any,
     Readonly<{}>,
     React.Component<{}, {}, any>
   >;
+  let props: Props = {
+    className: 'custom-style',
+    value: '',
+    handleSearch: () => {}
+  }
 
   beforeEach(() => {
-    component = setUp({});
+    component = setUp(props);
   });
 
   it('component does match to the snapshot', () => {
@@ -29,12 +34,12 @@ describe('<SortColumn />', () => {
       expect(component.find('ul')).toBeTruthy();
     });
 
-    it('has 3 li element', () => {
-      expect(component.find('li').length === 3).toBeTruthy();
+    it('has 1 li element', () => {
+      expect(component.find('li')).toBeTruthy();
     });
 
     it('has 1 input element', () => {
-      expect(component.find('input').length === 3).toBeTruthy();
+      expect(component.find('input')).toBeTruthy();
     });
   });
 });

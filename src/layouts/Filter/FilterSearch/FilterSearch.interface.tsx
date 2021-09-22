@@ -2,5 +2,6 @@ import React from "react";
 
 export interface Props {
     className?: string;
-    handleClick: (event: React.MouseEvent) => void;
-}
+    value: string;
+    handleSearch: (event: React.ChangeEvent) => void;
+};

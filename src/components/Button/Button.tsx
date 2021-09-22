@@ -6,17 +6,17 @@ import { Props } from './Button.interface';
 /**
  * Button component
  * @param {React.ReactElement | React.ReactNode | string} children - any children no required
- * @param {string} style - string style no required
+ * @param {string} className - string className no required
  * @param {() => void} handleClick - function handleClick required
  * @returns {React.ReactElement} - returns react element
  */
 const Button: FC<Props> = ({
   children,
-  style = '',
+  className = '',
   handleClick,
 }): React.ReactElement => {
   return (
-    <button className={`${style} button`} onClick={handleClick}>
+    <button className={`${className} button`} onClick={handleClick}>
       {children}
     </button>
   );

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterSearch /> component does match to the snapshot 1`] = `
+<ul
+  className="filter-search custom-style"
+>
+  <li
+    className="filter-search__item"
+  >
+    <input
+      className="filter-search__input"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </li>
+</ul>
+`;

@@ -1,6 +1,7 @@
 export interface Props {}
 
 export interface Entry {
+  [key: string]: string | number,
   date: string;
   distance: number;
   id: number;
@@ -8,17 +9,23 @@ export interface Entry {
   number: number;
 }
 
-export interface State {
-  filter: {
-    column: {
-      [key: string]: boolean;
-    },
-    operation: string,
-    search: string,
-  }
+export interface Filter {
+  column: {
+    [key: string]: boolean;
+  },
+  operation: {
+    [key: string]: boolean;
+  },
+  search: string;
 }
 
-export interface Context {
-  state: State;
-  setState: Function;
+export interface Params {
+  column: string;
+  operation: string;
+  search: string;
+}
+
+export interface FilterFunction {
+  params: Params;
+  entries: Entry[]
 }

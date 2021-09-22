@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Sort /> component does match to the snapshot 1`] = `
+exports[`<Filter /> component does match to the snapshot 1`] = `
 <ul
-  className="sort"
+  className="filter"
 >
   <li
-    className="sort__item"
+    className="filter__item"
   >
     <Button
       handleClick={[Function]}
@@ -45,11 +45,38 @@ exports[`<Sort /> component does match to the snapshot 1`] = `
     </Button>
   </li>
   <li
-    className="sort__item sort__submenu sort__item_noactive"
+    className="filter__item filter__submenu filter__item_noactive"
   >
-    <SortColumn />
-    <SortSignal />
-    <SortSearch />
+    <FilterRadio
+      className="filter__nested"
+      fields={
+        Object {
+          "distance": false,
+          "name": true,
+          "number": false,
+        }
+      }
+      handleChange={[Function]}
+      name="column"
+    />
+    <FilterRadio
+      className="filter__nested"
+      fields={
+        Object {
+          "contains": true,
+          "equal": false,
+          "less": false,
+          "more": false,
+        }
+      }
+      handleChange={[Function]}
+      name="operation"
+    />
+    <FilterSearch
+      className="filter__nested"
+      handleSearch={[Function]}
+      value=""
+    />
   </li>
 </ul>
 `;

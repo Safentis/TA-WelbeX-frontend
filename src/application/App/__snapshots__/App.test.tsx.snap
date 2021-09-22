@@ -9,10 +9,15 @@ exports[`<App /> component does match to the snapshot 1`] = `
         "filter": Object {
           "column": Object {
             "distance": false,
-            "name": true,
+            "name": false,
             "number": false,
           },
-          "operation": "equal",
+          "operation": Object {
+            "contains": false,
+            "equal": false,
+            "less": false,
+            "more": false,
+          },
           "search": "",
         },
       },
@@ -31,7 +36,7 @@ exports[`<App /> component does match to the snapshot 1`] = `
         <div
           className="table__functions"
         >
-          <Sort />
+          <Filter />
         </div>
         <table
           className="table__field"

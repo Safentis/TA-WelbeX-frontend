@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 
-import SortSearch from './SortSearch';
+import Filter from './index';
 
-import { Props } from './SortSearch.interface';
+import { Props } from './index.interface';
 
 const setUp = (props: Props) => {
-  return shallow(<SortSearch {...props} />);
+  return shallow(<Filter {...props} />);
 };
 
-describe('<SortSearch />', () => {
+describe('<Filter />', () => {
   let component: ShallowWrapper<
     any,
     Readonly<{}>,
@@ -33,8 +33,20 @@ describe('<SortSearch />', () => {
       expect(component.find('li')).toBeTruthy();
     });
 
-    it('has 1 input element', () => {
-      expect(component.find('input')).toBeTruthy();
+    it('has 1 Button element', () => {
+      expect(component.find('Button')).toBeTruthy();
+    });
+
+    it('has 1 FontAwesomeIcon element', () => {
+      expect(component.find('FontAwesomeIcon')).toBeTruthy();
+    });
+
+    it('has 2 FilterRadio element', () => {
+      expect(component.find('FilterRadio').length === 2).toBeTruthy();
+    });
+    
+    it('has 1 FilterSearch element', () => {
+      expect(component.find('FilterSearch')).toBeTruthy();
     });
   });
 });
