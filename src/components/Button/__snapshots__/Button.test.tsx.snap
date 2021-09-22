@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Custom props component does match to the snapshot 1`] = `
+<button
+  className=" button"
+  onClick={[Function]}
+/>
+`;
+
+exports[`<Button /> Default props component does match to the snapshot 1`] = `
+<button
+  className="any-style button"
+  onClick={[Function]}
+/>
+`;

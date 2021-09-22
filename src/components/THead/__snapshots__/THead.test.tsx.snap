@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<THead /> component does match to the snapshot 1`] = `
+<thead
+  className="thead"
+>
+  <tr
+    className="thead__tr"
+  >
+    <th
+      className="thead__th"
+      key="0"
+    >
+      Date
+    </th>
+    <th
+      className="thead__th"
+      key="1"
+    >
+      Name
+    </th>
+    <th
+      className="thead__th"
+      key="2"
+    >
+      Number
+    </th>
+    <th
+      className="thead__th"
+      key="3"
+    >
+      Distance
+    </th>
+  </tr>
+</thead>
+`;

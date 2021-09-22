@@ -1,0 +1,25 @@
+.button {
+    background-color: var(--main-dark-blue-color);
+    box-shadow: .1rem .1rem .1rem var(--main-black-color);
+    border: none;
+    border-radius: .5rem;
+    color: var(--main-white-color);
+    cursor: pointer;
+    padding: .5rem .75rem;
+    outline: none;
+    transition: .3s;
+}
+
+.button_active,
+.button:hover {
+    background-color: var(--main-dk-grey-color);
+    box-shadow: .1rem .1rem .1rem var(--main-dk-grey-color);
+}
+
+button:hover {
+    color: var(--main-dark-blue-color);
+}
+
+.button_active {
+    color: var(--main-purple-color) !important;
+}

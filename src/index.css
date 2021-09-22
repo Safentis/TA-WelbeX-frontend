@@ -1,0 +1,28 @@
+:root {
+  --main-white-color: #fff;
+  --main-black-color: #000;
+  --main-purple-color: #4c44cf;
+  --main-dark-blue-color: #142f48;
+  --main-grey-color: #f4f4f6;
+  --main-dk-grey-color: #e0e0e0;
+
+  --main-th-size: 1.8rem;
+  --main-td-size: 1.6rem;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

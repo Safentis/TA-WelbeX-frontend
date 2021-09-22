@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SortColumn /> component does match to the snapshot 1`] = `
+<ul
+  className="sort-column sort__nested"
+>
+  <li
+    className="sort-column__item"
+  >
+    <input
+      checked={true}
+      name="col"
+      onChange={[Function]}
+      type="radio"
+      value="name"
+    />
+  </li>
+  <li
+    className="sort-column__item"
+  >
+    <input
+      checked={false}
+      name="col"
+      onChange={[Function]}
+      type="radio"
+      value="number"
+    />
+  </li>
+  <li
+    className="sort-column__item"
+  >
+    <input
+      checked={false}
+      name="col"
+      onChange={[Function]}
+      type="radio"
+      value="distance"
+    />
+  </li>
+</ul>
+`;

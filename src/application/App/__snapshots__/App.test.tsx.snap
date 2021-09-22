@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> component does match to the snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "setState": [Function],
+      "state": Object {
+        "filter": Object {
+          "column": Object {
+            "distance": false,
+            "name": true,
+            "number": false,
+          },
+          "operation": "equal",
+          "search": "",
+        },
+      },
+    }
+  }
+>
+  <div
+    className="application"
+  >
+    <div
+      className="application__inner"
+    >
+      <div
+        className="table application__table"
+      >
+        <div
+          className="table__functions"
+        >
+          <Sort />
+        </div>
+        <table
+          className="table__field"
+        >
+          <THead />
+          <TBody />
+        </table>
+      </div>
+    </div>
+  </div>
+</ContextProvider>
+`;

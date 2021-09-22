@@ -1,0 +1,13 @@
+.thead {
+    background-color: var(--main-dk-grey-color);
+}
+
+.thead__tr {
+    
+}
+
+.thead__th {
+    color: var(--main-dark-blue-color);
+    font-size: var(--main-th-size);
+    text-transform: uppercase;
+}
