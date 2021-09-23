@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import Button from '../../components/Button/Button';
 
@@ -9,6 +9,7 @@ import { Entry } from '../../application/App/App.interface';
 /**
  * Pagination
  * @param {Entry[]} entries
+ * @param {Entry[]} filtered
  * @param {number} entriesOnPage
  * @param {number} currentPage
  * @param {(num: number) => void} handlePagination
@@ -16,25 +17,31 @@ import { Entry } from '../../application/App/App.interface';
  */
 
 // prettier-ignore
-const Pagination: FC<Props> = ({ entries, entriesOnPage, currentPage, handlePagination }): React.ReactElement => {
+const Pagination: FC<Props> = ({ entries, filteredCount, entriesOnPage, currentPage, handlePagination }): React.ReactElement => {
   //* -------------------------------------------------------------------------
   //* All page numbers
+  const [pageNumbers, setPageNumbers] = useState<number[]>([]);
   const activeBtnCls: string = 'button_active';
-  const pageNumbers: number[] = [];
-  const division: number = Math.ceil(entries.length / entriesOnPage);
-
-  //* In this case we get all page numbers  
-  for (let num = 1; num <= division; num++) {
-    pageNumbers.push(num);
-  }
+  
+  useEffect(() => {
+    let division: number = Math.ceil(filteredCount / entriesOnPage);
+    let nums: number[] = [];
+    
+    //* In this case we get all page numbers  
+    for (let num = 1; num <= division; num++) {
+      nums.push(num);
+    }
+    
+    //* And set new value
+    setPageNumbers(nums)
+  }, [filteredCount]);
 
   return (
     <ul className="pagination">
       {pageNumbers.map((num: number) => (
-        <li className="pagination__item">
+        <li className="pagination__item" key={num}>
           <Button 
             className={currentPage === num ? activeBtnCls : ''} 
-            key={num} 
             handleClick={() => handlePagination(num)}>
             {num}
           </Button>

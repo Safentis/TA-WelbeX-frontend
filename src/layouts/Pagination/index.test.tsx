@@ -17,6 +17,7 @@ describe('<Pagination />', () => {
   >;
   let props: Props = {
     entries: [],
+    filteredCount: 1,
     entriesOnPage: 1,
     currentPage: 1,
     handlePagination: () => {},

@@ -47,7 +47,8 @@ exports[`<App /> component does match to the snapshot 1`] = `
         <Pagination
           currentPage={1}
           entries={Array []}
-          entriesOnPage={2}
+          entriesOnPage={15}
+          filteredCount={0}
           handlePagination={[Function]}
         />
       </div>

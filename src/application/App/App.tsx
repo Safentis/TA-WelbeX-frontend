@@ -25,7 +25,8 @@ const App: FC<Props> = ({}): React.ReactElement => {
   const [filtered, setFiltered] = useState<Entry[]>([]);
 
   //* Pagination
-  const [entriesOnPage] = useState(2);
+  const [entriesOnPage] = useState(15);
+  const [filteredCount, setFilteredCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const handlePagination = (num: number): void => {
     setCurrentPage(num);
@@ -53,7 +54,9 @@ const App: FC<Props> = ({}): React.ReactElement => {
   useEffect(() => {
     (async () => {
       //* We are making request to server
-      const req = await fetch('http://localhost:8080/entries');
+      const req = await fetch(
+        'https://ta-table.herokuapp.com/entries',
+      );
       const ans = await req.json();
 
       //* After, we set value to main state
@@ -66,6 +69,7 @@ const App: FC<Props> = ({}): React.ReactElement => {
       });
 
       setFiltered(currentEntries);
+      setFilteredCount(ans.length);
     })();
   }, []);
 
@@ -99,6 +103,8 @@ const App: FC<Props> = ({}): React.ReactElement => {
       entries: newEntries,
     });
 
+    setFilteredCount(filtered.length);
+
     //* Create pahination from filtered entries
     const currentEntries = paginationCalcFunc({
       currentPage,
@@ -124,6 +130,7 @@ const App: FC<Props> = ({}): React.ReactElement => {
           <div className="table__pagination">
             <Pagination
               entries={entries}
+              filteredCount={filteredCount}
               entriesOnPage={entriesOnPage}
               currentPage={currentPage}
               handlePagination={handlePagination}
