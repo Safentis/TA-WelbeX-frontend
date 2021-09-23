@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/TA-WelbeX-frontend/static/css/main.e352c6f0.chunk.css",
+    "main.js": "/TA-WelbeX-frontend/static/js/main.95a8db6c.chunk.js",
+    "main.js.map": "/TA-WelbeX-frontend/static/js/main.95a8db6c.chunk.js.map",
+    "runtime-main.js": "/TA-WelbeX-frontend/static/js/runtime-main.78f47153.js",
+    "runtime-main.js.map": "/TA-WelbeX-frontend/static/js/runtime-main.78f47153.js.map",
+    "static/js/2.8696e795.chunk.js": "/TA-WelbeX-frontend/static/js/2.8696e795.chunk.js",
+    "static/js/2.8696e795.chunk.js.map": "/TA-WelbeX-frontend/static/js/2.8696e795.chunk.js.map",
+    "index.html": "/TA-WelbeX-frontend/index.html",
+    "static/css/main.e352c6f0.chunk.css.map": "/TA-WelbeX-frontend/static/css/main.e352c6f0.chunk.css.map",
+    "static/js/2.8696e795.chunk.js.LICENSE.txt": "/TA-WelbeX-frontend/static/js/2.8696e795.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.78f47153.js",
+    "static/js/2.8696e795.chunk.js",
+    "static/css/main.e352c6f0.chunk.css",
+    "static/js/main.95a8db6c.chunk.js"
+  ]
+}
