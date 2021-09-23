@@ -99,6 +99,7 @@ const App: FC<Props> = ({}): React.ReactElement => {
       entries: newEntries,
     });
 
+    //* Create pahination from filtered entries
     const currentEntries = paginationCalcFunc({
       currentPage,
       entriesOnPage,

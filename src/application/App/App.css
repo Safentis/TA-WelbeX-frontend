@@ -5,22 +5,7 @@
 .application__table {
   height: 75vh;
   display: grid;
-  grid-row-gap: 2rem;
-  grid-template-rows: 0.25fr 2fr 0.25fr;
-  grid-template-areas:
-    'f f f'
-    't t t'
-    'p p p';
-}
-
-.table__functions {
-  grid-area: f;
-}
-
-.table__fields {
-  grid-area: t;
-}
-
-.table__pagination {
-  grid-area: p;
+  grid-row-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: .25fr 1fr .25fr;
 }

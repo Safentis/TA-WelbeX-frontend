@@ -14,10 +14,10 @@ describe('<Button />', () => {
     React.Component<{}, {}, any>
   >;
 
-  describe('Default props', () => {
+  describe('Custom props', () => {
     let props: Props = {
       handleClick: () => {},
-      className: 'any-style',
+      className: 'custom-style',
     };
 
     beforeEach(() => {
@@ -35,7 +35,7 @@ describe('<Button />', () => {
     });
   });
 
-  describe('Custom props', () => {
+  describe('Default props', () => {
     let props: Props = {
       handleClick: () => {},
     };
