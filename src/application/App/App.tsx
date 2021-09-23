@@ -3,9 +3,10 @@ import React, { FC, useEffect, useState } from 'react';
 import Filter from '../../layouts/Filter';
 import THead from '../../components/THead/THead';
 import TBody from '../../components/TBody/TBody';
+import Pagination from '../../layouts/Pagination';
 
 import './App.css';
-import { filterFunction } from './App.functions';
+import { filterFunction, paginationCalcFunc } from './App.functions';
 import {
   Entry,
   Props,
@@ -23,20 +24,12 @@ const App: FC<Props> = ({}): React.ReactElement => {
   const [entries, setEntries] = useState<Entry[]>([]);
   const [filtered, setFiltered] = useState<Entry[]>([]);
 
-  //* In this case, we are making request to server, that 
-  //* returns all entries from DB and after, set them to state
-  //* "entries" and "filtered"
-  useEffect(() => {
-    (async () => {
-      //* We are making request to server
-      const req = await fetch('http://localhost:8080/entries');
-      const ans = await req.json();
-
-      //* After, we set value to main state
-      setEntries(ans);
-      setFiltered(ans);
-    })();
-  }, []);
+  //* Pagination
+  const [entriesOnPage] = useState(2);
+  const [currentPage, setCurrentPage] = useState(1);
+  const handlePagination = (num: number): void => {
+    setCurrentPage(num);
+  };
 
   //* Main state of filter
   const [filter, setFilter] = useState<FilterInterface>({
@@ -53,6 +46,28 @@ const App: FC<Props> = ({}): React.ReactElement => {
     },
     search: '',
   });
+
+  //* In this case, we are making request to server, that
+  //* returns all entries from DB and after, set them to state
+  //* "entries" and "filtered"
+  useEffect(() => {
+    (async () => {
+      //* We are making request to server
+      const req = await fetch('http://localhost:8080/entries');
+      const ans = await req.json();
+
+      //* After, we set value to main state
+      setEntries(ans);
+
+      const currentEntries = paginationCalcFunc({
+        currentPage,
+        entriesOnPage,
+        entries: ans,
+      });
+
+      setFiltered(currentEntries);
+    })();
+  }, []);
 
   //* In this case we are making filtering by table,
   //* if "filter" state changing
@@ -79,14 +94,20 @@ const App: FC<Props> = ({}): React.ReactElement => {
     //* Function from ./App.functions.ts
     //* that make filter by entries
     //* prettier-ignore
-    const filtered: Entry[] = filterFunction({ 
-      params, 
-      entries: newEntries 
+    const filtered: Entry[] = filterFunction({
+      params,
+      entries: newEntries,
+    });
+
+    const currentEntries = paginationCalcFunc({
+      currentPage,
+      entriesOnPage,
+      entries: filtered,
     });
 
     //* After filtering, set new or old state
-    setFiltered(filtered);
-  }, [filter]);
+    setFiltered(currentEntries);
+  }, [filter, currentPage]);
 
   return (
     <div className="application">
@@ -95,10 +116,18 @@ const App: FC<Props> = ({}): React.ReactElement => {
           <div className="table__functions">
             <Filter filter={filter} setFilter={setFilter} />
           </div>
-          <table className="table__field">
+          <table className="table__fields">
             <THead />
             <TBody filtered={filtered} />
           </table>
+          <div className="table__pagination">
+            <Pagination
+              entries={entries}
+              entriesOnPage={entriesOnPage}
+              currentPage={currentPage}
+              handlePagination={handlePagination}
+            />
+          </div>
         </div>
       </div>
     </div>

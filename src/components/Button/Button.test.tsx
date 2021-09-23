@@ -17,7 +17,7 @@ describe('<Button />', () => {
   describe('Default props', () => {
     let props: Props = {
       handleClick: () => {},
-      style: 'any-style',
+      className: 'any-style',
     };
 
     beforeEach(() => {

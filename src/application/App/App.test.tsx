@@ -28,7 +28,7 @@ describe('<App />', () => {
     it('has 1 table element', () => {
       expect(component.find('table')).toBeTruthy();
     });
-    
+
     it('has 1 Filter element', () => {
       expect(component.find('Filter')).toBeTruthy();
     });
@@ -39,6 +39,10 @@ describe('<App />', () => {
 
     it('has 1 TBody element', () => {
       expect(component.find('TBody')).toBeTruthy();
+    });
+
+    it('has 1 Pagination element', () => {
+      expect(component.find('Pagination')).toBeTruthy();
     });
   });
 });

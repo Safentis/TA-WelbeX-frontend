@@ -2,19 +2,22 @@
 
 exports[`<FilterRadio /> component does match to the snapshot 1`] = `
 <ul
-  className="custom-style"
+  className="filter-radio custom-style"
 >
   <li
-    className="filter-signal__item"
+    className="filter-radio__item"
     key="0"
   >
     <label
+      className="filter-radio__label filter-radio__label_active"
       htmlFor="name"
     >
       name
       <input
         checked={true}
+        className="filter-radio__input"
         id="name"
+        name="column"
         onChange={[Function]}
         type="radio"
         value="name"
@@ -22,16 +25,19 @@ exports[`<FilterRadio /> component does match to the snapshot 1`] = `
     </label>
   </li>
   <li
-    className="filter-signal__item"
+    className="filter-radio__item"
     key="1"
   >
     <label
+      className="filter-radio__label "
       htmlFor="number"
     >
       number
       <input
         checked={false}
+        className="filter-radio__input"
         id="number"
+        name="column"
         onChange={[Function]}
         type="radio"
         value="number"
@@ -39,16 +45,19 @@ exports[`<FilterRadio /> component does match to the snapshot 1`] = `
     </label>
   </li>
   <li
-    className="filter-signal__item"
+    className="filter-radio__item"
     key="2"
   >
     <label
+      className="filter-radio__label "
       htmlFor="distance"
     >
       distance
       <input
         checked={false}
+        className="filter-radio__input"
         id="distance"
+        name="column"
         onChange={[Function]}
         type="radio"
         value="distance"

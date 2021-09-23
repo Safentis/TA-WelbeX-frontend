@@ -1,11 +1,9 @@
 .tbody {
-    background-color: var(--main-grey-color);
+  background-color: var(--main-grey-color);
 }
 
-.tbody__tr {}
-
 .tbody__td {
-    color: var(--main-dark-blue-color);
-    font-size: var(--main-td-size);
-    text-align: center;
+  color: var(--main-dark-blue-color);
+  font-size: var(--main-td-size);
+  text-align: center;
 }

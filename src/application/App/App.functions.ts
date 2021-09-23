@@ -1,4 +1,9 @@
-import { Entry, FilterFunction, Params } from './App.interface';
+import {
+  Entry,
+  FilterFunction,
+  PaginationCalcFunc,
+  Params,
+} from './App.interface';
 
 /**
  * Function makes filtering by entries
@@ -47,4 +52,16 @@ export const filterFunction = ({ params, entries }: FilterFunction): Entry[] => 
   } else {
     return entries;
   }
+};
+
+export const paginationCalcFunc = ({
+  currentPage,
+  entriesOnPage,
+  entries,
+}: PaginationCalcFunc): Entry[] => {
+  let lastIndex = currentPage * entriesOnPage;
+  let firstIndex = lastIndex - entriesOnPage;
+  let currentEntries = entries.slice(firstIndex, lastIndex);
+
+  return currentEntries;
 };

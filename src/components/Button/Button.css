@@ -1,30 +1,27 @@
 .button {
-    background-color: var(--main-dark-blue-color);
-    box-shadow: .1rem .1rem .1rem var(--main-black-color);
-    border: none;
-    border-radius: .5rem;
-    color: var(--main-white-color);
-    cursor: pointer;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding: .5rem .75rem;
-    min-width: 2.5rem;
-    min-height: 2.5rem;
-    outline: none;
-    transition: .3s;
+  background-color: var(--main-dark-blue-color);
+  box-shadow: 0.1rem 0.1rem 0.1rem var(--main-black-color);
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--main-white-color);
+  cursor: pointer;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  transition: 0.3s;
 }
 
 .button_active,
 .button:hover {
-    background-color: var(--main-dk-grey-color);
-    box-shadow: .1rem .1rem .1rem var(--main-dk-grey-color);
+  background-color: var(--main-dk-grey-color);
+  box-shadow: 0.1rem 0.1rem 0.1rem var(--main-dk-grey-color);
 }
 
 button:hover {
-    color: var(--main-dark-blue-color);
+  color: var(--main-dark-blue-color);
 }
 
 .button_active {
-    color: var(--main-purple-color) !important;
+  color: var(--main-purple-color) !important;
 }

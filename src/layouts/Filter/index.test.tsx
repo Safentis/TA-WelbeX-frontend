@@ -15,9 +15,26 @@ describe('<Filter />', () => {
     Readonly<{}>,
     React.Component<{}, {}, any>
   >;
+  let props: Props = {
+    filter: {
+      column: {
+        name: false,
+        number: false,
+        distance: false,
+      },
+      operation: {
+        more: false,
+        less: false,
+        equal: false,
+        contains: false,
+      },
+      search: '',
+    },
+    setFilter: () => {},
+  };
 
   beforeEach(() => {
-    component = setUp({});
+    component = setUp(props);
   });
 
   it('component does match to the snapshot', () => {
@@ -44,7 +61,7 @@ describe('<Filter />', () => {
     it('has 2 FilterRadio element', () => {
       expect(component.find('FilterRadio').length === 2).toBeTruthy();
     });
-    
+
     it('has 1 FilterSearch element', () => {
       expect(component.find('FilterSearch')).toBeTruthy();
     });

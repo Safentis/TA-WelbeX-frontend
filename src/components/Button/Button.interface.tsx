@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
 export interface Props {
-    className?: string;
-    handleClick: (event: React.MouseEvent) => void;
+  className?: string;
+  handleClick: (event: React.MouseEvent) => void;
 }

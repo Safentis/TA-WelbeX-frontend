@@ -1,51 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> component does match to the snapshot 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "setState": [Function],
-      "state": Object {
-        "filter": Object {
-          "column": Object {
-            "distance": false,
-            "name": false,
-            "number": false,
-          },
-          "operation": Object {
-            "contains": false,
-            "equal": false,
-            "less": false,
-            "more": false,
-          },
-          "search": "",
-        },
-      },
-    }
-  }
+<div
+  className="application"
 >
   <div
-    className="application"
+    className="application__inner"
   >
     <div
-      className="application__inner"
+      className="table application__table"
     >
       <div
-        className="table application__table"
+        className="table__functions"
       >
-        <div
-          className="table__functions"
-        >
-          <Filter />
-        </div>
-        <table
-          className="table__field"
-        >
-          <THead />
-          <TBody />
-        </table>
+        <Filter
+          filter={
+            Object {
+              "column": Object {
+                "distance": false,
+                "name": false,
+                "number": false,
+              },
+              "operation": Object {
+                "contains": false,
+                "equal": false,
+                "less": false,
+                "more": false,
+              },
+              "search": "",
+            }
+          }
+          setFilter={[Function]}
+        />
+      </div>
+      <table
+        className="table__fields"
+      >
+        <THead />
+        <TBody
+          filtered={Array []}
+        />
+      </table>
+      <div
+        className="table__pagination"
+      >
+        <Pagination
+          currentPage={1}
+          entries={Array []}
+          entriesOnPage={2}
+          handlePagination={[Function]}
+        />
       </div>
     </div>
   </div>
-</ContextProvider>
+</div>
 `;

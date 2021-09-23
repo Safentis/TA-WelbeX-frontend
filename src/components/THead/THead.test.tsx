@@ -13,9 +13,10 @@ describe('<THead />', () => {
     Readonly<{}>,
     React.Component<{}, {}, any>
   >;
+  let props: Props = {};
 
   beforeEach(() => {
-    component = setUp({});
+    component = setUp(props);
   });
 
   it('component does match to the snapshot', () => {

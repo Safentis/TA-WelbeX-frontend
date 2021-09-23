@@ -1,24 +1,25 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 
-import FilterSearch from './FilterSearch';
+import Pagination from './index';
 
-import { Props } from './FilterSearch.interface';
+import { Props } from './index.interface';
 
 const setUp = (props: Props) => {
-  return shallow(<FilterSearch {...props} />);
+  return shallow(<Pagination {...props} />);
 };
 
-describe('<FilterSearch />', () => {
+describe('<Pagination />', () => {
   let component: ShallowWrapper<
     any,
     Readonly<{}>,
     React.Component<{}, {}, any>
   >;
   let props: Props = {
-    className: 'custom-style',
-    value: '',
-    handleSearch: () => {},
+    entries: [],
+    entriesOnPage: 1,
+    currentPage: 1,
+    handlePagination: () => {},
   };
 
   beforeEach(() => {
@@ -38,8 +39,8 @@ describe('<FilterSearch />', () => {
       expect(component.find('li')).toBeTruthy();
     });
 
-    it('has 1 input element', () => {
-      expect(component.find('input')).toBeTruthy();
+    it('has 1 Button element', () => {
+      expect(component.find('Button')).toBeTruthy();
     });
   });
 });

@@ -1,7 +1,7 @@
 export interface Props {}
 
 export interface Entry {
-  [key: string]: string | number,
+  [key: string]: string | number;
   date: string;
   distance: number;
   id: number;
@@ -12,10 +12,10 @@ export interface Entry {
 export interface Filter {
   column: {
     [key: string]: boolean;
-  },
+  };
   operation: {
     [key: string]: boolean;
-  },
+  };
   search: string;
 }
 
@@ -27,5 +27,11 @@ export interface Params {
 
 export interface FilterFunction {
   params: Params;
-  entries: Entry[]
+  entries: Entry[];
+}
+
+export interface PaginationCalcFunc {
+  currentPage: number;
+  entriesOnPage: number;
+  entries: Entry[];
 }

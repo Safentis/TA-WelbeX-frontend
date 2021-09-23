@@ -13,9 +13,12 @@ describe('TBody', () => {
     Readonly<{}>,
     React.Component<{}, {}, any>
   >;
+  let props: Props = {
+    filtered: [],
+  };
 
   beforeEach(() => {
-    component = setUp({});
+    component = setUp(props);
   });
 
   it('component does match to the snapshot', () => {
@@ -31,8 +34,8 @@ describe('TBody', () => {
       expect(component.find('tr')).toBeTruthy();
     });
 
-    it('has 4 td element', () => {
-      expect(component.find('td').length === 4).toBeTruthy();
+    it('has 0 td element', () => {
+      expect(component.find('td').length === 0).toBeTruthy();
     });
   });
 });
